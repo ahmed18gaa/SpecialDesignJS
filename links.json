@@ -1,0 +1,35 @@
+{
+    "data": [
+      {
+        "data_section": ".about-us",
+        "bulletText": "About Us",
+        "linkText": "About"
+      },
+      {
+        "data_section": ".skills",
+        "bulletText": "Our Skills",
+        "linkText": "Skills"
+      },
+      {
+        "data_section": ".gallery",
+        "bulletText": "Our Gallery",
+        "linkText": "Gallery"
+      },
+      {
+        "data_section": ".timeline",
+        "bulletText": "Timeline",
+        "linkText": "Timeline"
+      },
+      {
+        "data_section": ".features",
+        "bulletText": "Features",
+        "linkText": "Features"
+      },
+      {
+        "data_section": ".testimonials",
+        "bulletText": "Testimonials",
+        "linkText": "Testimonials"
+      }
+    ]
+  }
+  
