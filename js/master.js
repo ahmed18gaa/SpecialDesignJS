@@ -98,48 +98,47 @@ let counter = 0;
 fetch("../links.json")
   .then((response) => response.json())
   .then((data) => {
-    const data_section = [];
-    const bulletText = [];
-    const linkText = [];
     data.data.forEach((item) => {
-      data_section.push(item.data_section);
-      bulletText.push(item.bulletText);
-      linkText.push(item.linkText);
+      createBullet(item.data_section, item.bulletText);
+      createLinks(item.data_section, item.linkText);
       counter++;
     });
-    createBullet(data_section, bulletText);
-    createLinks(data_section, linkText);
+
+    smoothBullets();
+    smoothLinks();
   })
   .catch((error) => console.error(error));
 
 function createBullet(data_section, bulletText) {
-  for (let i = 0; i < counter; i++) {
-    let bulletDiv = document.createElement("div");
-    bulletDiv.className = "bullet";
-    bulletDiv.setAttribute("data-section", data_section[i]);
+  let bulletDiv = document.createElement("div");
+  bulletDiv.className = "bullet";
+  bulletDiv.setAttribute("data-section", data_section);
 
-    let tooltipDiv = document.createElement("div");
-    tooltipDiv.className = "tooltip";
-    tooltipDiv.innerHTML = bulletText[i];
+  let tooltipDiv = document.createElement("div");
+  tooltipDiv.className = "tooltip";
+  tooltipDiv.innerHTML = bulletText;
 
-    bulletDiv.appendChild(tooltipDiv);
-    navBullets.appendChild(bulletDiv);
-  }
+  bulletDiv.appendChild(tooltipDiv);
+  navBullets.appendChild(bulletDiv);
+}
+
+function createLinks(data_section, linkText) {
+  let li = document.createElement("li");
+
+  let a = document.createElement("a");
+  a.setAttribute("data-section", data_section);
+  a.innerHTML = linkText;
+
+  li.appendChild(a);
+  linksDiv.appendChild(li);
+}
+
+function smoothBullets() {
   const allBullets = document.querySelectorAll(".nav-bullets .bullet");
   scrollToSomewhere(allBullets);
 }
 
-function createLinks(data_section, linkText) {
-  for (let i = 0; i < counter; i++) {
-    let li = document.createElement("li");
-
-    let a = document.createElement("a");
-    a.setAttribute("data-section", data_section[i]);
-    a.innerHTML = linkText[i];
-
-    li.appendChild(a);
-    linksDiv.appendChild(li);
-  }
+function smoothLinks() {
   const allLinks = document.querySelectorAll(".links a");
   scrollToSomewhere(allLinks);
 }
