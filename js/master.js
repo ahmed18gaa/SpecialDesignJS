@@ -62,10 +62,7 @@ colorLi.forEach((li) => {
 
     localStorage.setItem("color_option", e.target.dataset.color);
 
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    handleActive(e);
   });
 });
 
@@ -73,10 +70,8 @@ colorLi.forEach((li) => {
 const randomBackEl = document.querySelectorAll(".random-backgrounds span");
 randomBackEl.forEach((span) => {
   span.addEventListener("click", (e) => {
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-    e.target.classList.add("active");
+    handleActive(e);
+
     if (e.target.dataset.background === "yes") {
       backgroundOption = true;
       randomizeImgs();
@@ -237,3 +232,10 @@ document.addEventListener("click", (e) => {
   }
 });
 // End Gallery
+
+function handleActive(e) {
+  e.target.parentElement.querySelectorAll(".active").forEach((element) => {
+    element.classList.remove("active");
+  });
+  e.target.classList.add("active");
+}
