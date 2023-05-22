@@ -228,7 +228,7 @@ html {
   display: none;
   position: relative;
 }
-.landing-page .header-area .toggle-menu:before {
+.landing-page .header-area .toggle-menu.menu-active:before {
   content: "";
   position: absolute;
   border-width: 10px;

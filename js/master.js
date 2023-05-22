@@ -204,6 +204,34 @@ function randomizeImgs() {
   }
 }
 randomizeImgs();
+
+// Toggle Menu
+let toggleBtn = document.querySelector(".toggle-menu");
+let tlinks = document.querySelector(".links");
+
+toggleBtn.onclick = function (e) {
+  e.stopPropagation();
+
+  removeMenu(this, tlinks);
+};
+
+document.addEventListener("click", (e) => {
+  if (e.target !== toggleBtn && e.target !== tlinks) {
+    if (tlinks.classList.contains("open")) {
+      removeMenu(toggleBtn, tlinks);
+    }
+  }
+});
+
+tlinks.onclick = function (e) {
+  e.stopPropagation();
+};
+
+function removeMenu(toggleBtn, tlinks) {
+  toggleBtn.classList.toggle("menu-active");
+  tlinks.classList.toggle("open");
+}
+
 // End Landing Page
 
 // Start Skills
