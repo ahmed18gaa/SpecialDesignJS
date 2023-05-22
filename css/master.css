@@ -196,13 +196,13 @@ html {
   padding: 15px;
   font-weight: bold;
 }
-.landing-page .header-area .links {
-  list-style: none;
+.landing-page .header-area .links-container {
   width: 100%;
   text-align: right;
+}
+.landing-page .header-area .links {
+  list-style: none;
   padding-left: 0;
-  padding-right: 20px;
-  font-size: 15px;
   user-select: none;
 }
 .landing-page .header-area .links li {
@@ -213,10 +213,28 @@ html {
   color: #fff;
   text-decoration: none;
   transition: 0.3s;
+  cursor: pointer;
 }
 .landing-page .header-area .links li a:hover,
 .landing-page .header-area .links li a.active {
   color: var(--main-color);
+}
+.landing-page .header-area .toggle-menu {
+  background: none;
+  border: none;
+  width: 40px;
+  cursor: pointer;
+  margin-top: 15px;
+  display: none;
+}
+.landing-page .header-area .toggle-menu:focus {
+  outline: none;
+}
+.landing-page .header-area .toggle-menu span {
+  display: block;
+  background-color: #fff;
+  height: 4px;
+  margin-bottom: 4px;
 }
 .landing-page .introduction-text {
   position: absolute;
@@ -239,6 +257,14 @@ html {
   line-height: 2;
   font-size: 20px;
   margin: 0;
+}
+@media (max-width: 991px) {
+  .landing-page .header-area .links {
+    display: none;
+  }
+  .landing-page .header-area .toggle-menu {
+    display: inline-block;
+  }
 }
 /* End Landing Page */
 
