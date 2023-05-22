@@ -226,6 +226,17 @@ html {
   cursor: pointer;
   margin-top: 15px;
   display: none;
+  position: relative;
+}
+.landing-page .header-area .toggle-menu:before {
+  content: "";
+  position: absolute;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 .landing-page .header-area .toggle-menu:focus {
   outline: none;
@@ -261,6 +272,25 @@ html {
 @media (max-width: 991px) {
   .landing-page .header-area .links {
     display: none;
+  }
+  .landing-page .header-area .links.open {
+    background-color: #fff;
+    padding: 10px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    border-radius: 4px;
+    text-align: left;
+  }
+  .landing-page .header-area .links.open li {
+    display: block;
+    margin: 10px;
+  }
+  .landing-page .header-area .links.open li a {
+    color: var(--main-color);
+    font-weight: bold;
   }
   .landing-page .header-area .toggle-menu {
     display: inline-block;
