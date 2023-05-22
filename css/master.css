@@ -106,6 +106,18 @@ html {
 .settings-box .option-box span.active {
   opacity: 1;
 }
+.settings-box .reset-options {
+  background-color: #f44335;
+  border: none;
+  width: 178px;
+  margin: 10px auto;
+  display: block;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
 /* End Setting Box */
 
 /* Start Nav Bullets */

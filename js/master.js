@@ -113,6 +113,15 @@ bulletsSpan.forEach((span) => {
   });
 });
 
+// Reset Button
+document.querySelector(".reset-options").onclick = function () {
+  localStorage.removeItem("color_option");
+  localStorage.removeItem("background_option");
+  localStorage.removeItem("bullets_option");
+
+  window.location.reload();
+};
+
 // End Setting Box
 
 // Start Scroll Function
